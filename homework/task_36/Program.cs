@@ -28,15 +28,15 @@ void PrintArray(int[] arr)
 
 int GetsumOddPositionElem(int[] arr)
 {
-    int sum = 0;
+    int sumOddPosition = 0;
     int i = 0;
     while (i < arr.Length)
     {
-        sum += arr[i];
+        sumOddPosition += arr[i];
         i = i + 2;
     }
 
-    return sum;
+    return sumOddPosition;
 }
 
 int[] array = CreateArrayRndInt(4, 3, 23);
