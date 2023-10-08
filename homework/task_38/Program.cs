@@ -2,82 +2,84 @@
 // Найдите разницу между максимальным и минимальным элементов массива.
 // [3.22, 4.2, 1.15, 77.15, 65.2] => 77.15 - 1.15 = 76
 
-Console.Write("Введите количество элементов массива: ");
-int a = Convert.ToInt32(Console.ReadLine());
-double[] randomArray = new double[a];
 
-void mas(int a)
+double[] CreateArrayRndDouble(int size, int min, int max)
 {
-Random rand = new Random();
-for (int i = 0; i < a; i++)
-{
-randomArray[i] = rand.NextDouble();
-Console.Write($»{randomArray[i]:F2} «);
-}
+    double[] arr = new double[size];
+    Random rnd = new Random();
 
-}
-
-double raz(double[] randomArray)
-{
-double min = randomArray[0];
-double max = randomArray[0];
-int i = 1;
-while (i < randomArray.Length)
-{
-if (max<randomArray[i])
-max = randomArray[i];
-if (min>randomArray[i])
-min = randomArray[i];
-i = i + 1;
-}
-return max-min;
-}
-
-mas(a);
-Console.Write($»\nРазница между максимальным и минимальным элементов массива: {raz(randomArray):F2}»);
-
-
-
-int size = 10;
-int[] numbers = new int[size];
-FillArrayRandomNumbers(numbers);
-PrintArray(numbers);
-
-int max = numbers[0];
-int min = numbers[0];
-
-for (int i = 0; i < numbers.Length; i++)
-{
-    if (numbers[i] > max)
+    for (int i = 0; i < size; i++)
     {
-        max = numbers[i];
+        arr[i] = rnd.NextDouble() * (max - min) + min;
     }
-    else if (numbers[i] < min)
-    {
-        min = numbers[i];
-    }
+
+    return arr;
 }
-
-Console.WriteLine($"Минимальное число: {min}");
-Console.WriteLine($"Минимальное число: {max}");
-Console.WriteLine($"Разница между максимальным и минимальным числами: {max-min}");
-
-
-
-void FillArrayRandomNumbers(int[] array)
+void PrintArrayDouble(double[] arr)
 {
-    for (int i = 0; i < array.Length; i++)
+    //Console.WriteLine("[");
+    for (int i = 0; i < arr.Length; i++)
     {
-        array[i] = new Random().Next(1, 555);
+        //double nRound = Math.Round(arr[i], 1);
+        if (i < arr.Length - 1) Console.Write($"{arr[i]:F1}, ");
+        else Console.Write($"{arr[i]:F1}");
     }
+    //Console.WriteLine("]");
 }
 
-
-void PrintArray(int[] array)
+double[] GetSumMaxMinElem(double[] arr)
 {
-    for (int i = 0; i < array.Length; i++)
+    double sumMaxNumber = 0;
+    double sumMinNumber = 0;
+
+    for (int i = 0; i < arr.Length; i++)
     {
-        Console.Write(array[i] + " ");
+        if (arr[i] > 0) sumMaxNumber += arr[i];
+        else sumMinNumber += arr[i];
     }
-    Console.WriteLine();
+
+    return new double[] { sumMaxNumber, sumMinNumber };
 }
+
+double GetSumMaxElem(double[] arr)
+{
+    double sum = 0;
+    for (int i = 0; i < arr.Length; i++)
+    {
+        if (arr[i] > 0) sum += arr[i];
+    }
+
+    return sum;
+}
+
+double GetSumMinElem(double[] arr)
+{
+   double sum = 0;
+    for (int i = 0; i < arr.Length; i++)
+    {
+        if (arr[i] < 0) sum += arr[i];
+    }
+
+    return sum;
+}
+
+double[] array = CreateArrayRndDouble(5, -88, 77);
+Console.Write("[");
+// PrintArray(array);
+Console.WriteLine("]");
+
+double[] sumMaxMinElem = GetSumMaxMinElem(array);
+
+// Console.WriteLine($"Сумма максимальных элементов => {sumMaxMinElem[0]}");
+// Console.WriteLine($"Сумма минимальных элементов => {sumMaxMinElem[1]}");
+
+double sumMaxNumber = GetSumMaxElem(array);
+double sumMinNumber = GetSumMinElem(array);
+
+Console.WriteLine($"Сумма максимальных элементов => {sumMaxNumber}");
+Console.WriteLine($"Сумма минимальных элементов => {sumMinNumber}");
+Console.WriteLine($"Сумма разницы между суммой максимальных и минимальных => {sumMaxNumber-sumMinNumber }");
+
+
+
+// Создал разницу между суммами, между максимальным и минимальным числами пока не сходится
