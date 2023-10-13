@@ -1,0 +1,15 @@
+D:\Учеба\ДЗC#\homework\task_41\bin\Debug\net6.0\task_41.exe
+D:\Учеба\ДЗC#\homework\task_41\bin\Debug\net6.0\task_41.deps.json
+D:\Учеба\ДЗC#\homework\task_41\bin\Debug\net6.0\task_41.runtimeconfig.json
+D:\Учеба\ДЗC#\homework\task_41\bin\Debug\net6.0\task_41.dll
+D:\Учеба\ДЗC#\homework\task_41\bin\Debug\net6.0\task_41.pdb
+D:\Учеба\ДЗC#\homework\task_41\obj\Debug\net6.0\task_41.csproj.AssemblyReference.cache
+D:\Учеба\ДЗC#\homework\task_41\obj\Debug\net6.0\task_41.GeneratedMSBuildEditorConfig.editorconfig
+D:\Учеба\ДЗC#\homework\task_41\obj\Debug\net6.0\task_41.AssemblyInfoInputs.cache
+D:\Учеба\ДЗC#\homework\task_41\obj\Debug\net6.0\task_41.AssemblyInfo.cs
+D:\Учеба\ДЗC#\homework\task_41\obj\Debug\net6.0\task_41.csproj.CoreCompileInputs.cache
+D:\Учеба\ДЗC#\homework\task_41\obj\Debug\net6.0\task_41.dll
+D:\Учеба\ДЗC#\homework\task_41\obj\Debug\net6.0\refint\task_41.dll
+D:\Учеба\ДЗC#\homework\task_41\obj\Debug\net6.0\task_41.pdb
+D:\Учеба\ДЗC#\homework\task_41\obj\Debug\net6.0\task_41.genruntimeconfig.cache
+D:\Учеба\ДЗC#\homework\task_41\obj\Debug\net6.0\ref\task_41.dll
