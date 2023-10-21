@@ -2,30 +2,24 @@
 // M = 1; N = 15 -> 120
 // M = 4; N = 8. -> 30
 
-Console.Write("Введите число M: ");
-int m = Convert.ToInt32(Console.ReadLine());
 
-Console.Write("Введите число N: ");
-int n = Convert.ToInt32(Console.ReadLine());
 
-SumFromMToN(m, n);
+Console.WriteLine("Введите начальное число M:");
+int numberM = int.Parse(Console.ReadLine());
 
-// вызов функции "сумма чисел от M до N"
-void SumFromMToN(int m, int n)
+Console.WriteLine("Введите начальное число M:");
+int numberN = int.Parse(Console.ReadLine());
+
+///Метод нахождения суммы натуральных элементов в промежутке от M до N
+void GapNumberSum(int numberM, int numberN, int sum)
 {
-    Console.Write(SumMN(m - 1, n));
-}
-
-// функция сумма чисел от M до N
-int SumMN(int m, int n)
-{
-    int res = m;
-    if (m == n)
-        return 0;
-    else
+    if (numberM > numberN)
     {
-        m++;
-        res = m + SumMN(m, n);
-        return res;
+        Console.WriteLine($"Сумма натуральных элементов в промежутке от M до N: {sum}");
+        return;
     }
+    sum = sum + (numberM++);
+    GapNumberSum(numberM, numberN, sum);
 }
+
+GapNumberSum(numberM, numberN, 0);
